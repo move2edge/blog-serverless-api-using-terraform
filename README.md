@@ -62,12 +62,6 @@ export ID_TOKEN=$(curl -s -X POST \
   }' | jq -r '.idToken')                 
 ```
 
-After signing in export idToken from the response.
-
-```bash
-export ID_TOKEN="token"
-```
-
 ### Create Epic Failures
 
 ```bash
