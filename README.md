@@ -7,6 +7,7 @@
   ```
 
 ## Plan terraform
+
   Try to plan the terraform to see what resources will be created.
 
   ```bash
@@ -14,11 +15,13 @@
   ```
 
 ## Fetch node.js dependencies
+
   ```bash
   cd epicfailure-api && yarn install
   ```
 
 ## Build the node.js project, package and deploy using terraform
+
   ```bash
   cd epicfailure-api && yarn yarn package-build-and-deploy
   ```
@@ -27,13 +30,13 @@
 
 Use environment variables to set your email, and invoke_url output from the terraform apply command.
 
-
 ```bash
 export EMAIL="your-email@example.com"
 export INVOKE_URL="https://your-invoke-url-from-terraform-output"
 ```
 
 ### Sign up
+
 ```bash
 curl -X POST \
   ${INVOKE_URL}/sign-up \
@@ -47,8 +50,8 @@ curl -X POST \
 
 Now you need to open your inbox and accept the invitation to sign up.
 
-
 ### Sign in and export idToken
+
 ```bash
 export ID_TOKEN=$(curl -s -X POST \
   ${INVOKE_URL}/sign-in \
@@ -66,6 +69,7 @@ export ID_TOKEN="token"
 ```
 
 ### Create Epic Failures
+
 ```bash
 curl -X POST \
   ${INVOKE_URL}/create-epic-failure \
@@ -93,6 +97,7 @@ curl -X POST \
 ```
 
 ### GET Epic Failures
+
 ```bash
 curl -X GET \
   ${INVOKE_URL}/get-all-failures \
@@ -101,6 +106,7 @@ curl -X GET \
 ```
 
 ### DELETE Epic Failure
+
 ```bash
 curl -X DELETE \
   ${INVOKE_URL}/delete-epic-failure \
@@ -109,4 +115,4 @@ curl -X DELETE \
   -d '{
     "failureID": "001"
   }'
-  '''
+```
