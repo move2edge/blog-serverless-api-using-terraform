@@ -1,4 +1,4 @@
-# Terraform Serverless Rest API
+# Serverless API on AWS using Terraform
 
 ## Init terraform
   
