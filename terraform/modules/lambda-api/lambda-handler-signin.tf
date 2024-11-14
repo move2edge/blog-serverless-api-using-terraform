@@ -1,4 +1,5 @@
 # terraform/modules/lambda-api/lambda-handler-signin.tf
+
 # This Terraform configuration defines the following AWS resources:
 # 1. Lambda Function for Sign-In (aws_lambda_function): Creates a Lambda function for handling user sign-ins.
 # 2. Data Source for Sign-In Lambda Code (data "archive_file"): Archives the sign-in Lambda function code into a zip file.

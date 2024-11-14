@@ -1,4 +1,5 @@
 // epicfailure-api/src/shared-layer/services/CognitoService.ts
+
 // This file defines the CognitoService class, which implements the ICognitoService interface.
 // The class provides methods for interacting with AWS Cognito, including user sign-up and sign-in.
 // It uses the AWS SDK for JavaScript to communicate with the Cognito Identity Provider.

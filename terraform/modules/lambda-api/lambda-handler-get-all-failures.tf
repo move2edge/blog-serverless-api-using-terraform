@@ -1,4 +1,5 @@
 # terraform/modules/lambda-api/lambda-handler-get-all-failures.tf
+
 # This Terraform configuration defines the following AWS resources:
 # 1. Lambda Function for Getting All Failures (aws_lambda_function): Creates a Lambda function for retrieving all failure records from DynamoDB.
 # 2. Data Source for Get All Failures Lambda Code (data "archive_file"): Archives the get-all-failures Lambda function code into a zip file.

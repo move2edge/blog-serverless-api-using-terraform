@@ -1,4 +1,5 @@
 # terraform/modules/lambda-api/variables.tf
+
 # This Terraform configuration defines the following input variables to the lambda-api module:
 # 1. aws_region: The AWS region to deploy resources.
 # 2. user_pool_id: The ID of the Cognito User Pool.

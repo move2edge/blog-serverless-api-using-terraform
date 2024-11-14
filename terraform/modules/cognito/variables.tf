@@ -1,4 +1,5 @@
 # terraform/modules/cognito/variables.tf
+
 # This Terraform configuration defines the following input variables of the cognito module:
 # 1. aws_region: The AWS region to deploy resources.
 # 2. cognito_user_pool_name: The name of the Cognito User Pool.

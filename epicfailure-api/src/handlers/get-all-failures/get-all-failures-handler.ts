@@ -1,4 +1,5 @@
 // epicfailure-api/src/handlers/get-all-failures/get-all-failures-handler.ts
+
 // This file defines the AWS Lambda handler for retrieving all epic failure records from DynamoDB.
 // It imports necessary services and models, and uses DynamoDBService to fetch all records from DynamoDB.
 
