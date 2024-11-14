@@ -1,3 +1,4 @@
+# terraform/modules/dynamodb/main.tf
 # This Terraform configuration defines the following AWS DynamoDB resource:
 # 1. DynamoDB Table (aws_dynamodb_table): Creates a DynamoDB table with the specified name, billing mode, hash key, and tags.
 

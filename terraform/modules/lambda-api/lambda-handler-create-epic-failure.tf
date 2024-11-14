@@ -1,3 +1,4 @@
+# terraform/modules/lambda-api/lambda-handler-create-epic-failure.tf
 # This Terraform configuration defines the following AWS resources:
 # 1. Lambda Function for Creating an Epic Failure (aws_lambda_function): Creates a Lambda function for creating a failure record in DynamoDB.
 # 2. Data Source for Create Epic Failure Lambda Code (data "archive_file"): Archives the create-epic-failure Lambda function code into a zip file.

@@ -1,3 +1,4 @@
+# terraform/modules/cognito/main.tf
 # This Terraform configuration defines the following AWS Cognito resources:
 # 1. Cognito User Pool (aws_cognito_user_pool): Creates a user pool with specified settings including account recovery, verification message template, auto-verified attributes, and password policy.
 # 2. Cognito User Pool Domain (aws_cognito_user_pool_domain): Creates a domain for the user pool.

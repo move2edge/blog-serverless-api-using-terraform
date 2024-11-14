@@ -1,3 +1,4 @@
+# terraform/modules/lambda-api/lambda-handler-signup.tf
 # This Terraform configuration defines the following AWS resources:
 # 1. Lambda Function for Sign-Up (aws_lambda_function): Creates a Lambda function for handling user sign-ups.
 # 2. Data Source for Sign-Up Lambda Code (data "archive_file"): Archives the sign-up Lambda function code into a zip file.

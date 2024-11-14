@@ -1,3 +1,4 @@
+# terraform/modules/apigateway/main.tf
 # This Terraform configuration defines the following AWS resources:
 # 1. API Gateway (aws_apigatewayv2_api): Creates an HTTP API Gateway with the specified name.
 # 2. API Gateway Stage (aws_apigatewayv2_stage): Creates a deployment stage for the API Gateway with auto-deploy enabled and access logging configured to CloudWatch.

@@ -1,3 +1,4 @@
+# terraform/modules/lambda-api/lambda-shared-layers.tf
 # This Terraform configuration defines the following AWS Lambda Layer resources:
 # 1. Lambda Layer Version for Dependencies (aws_lambda_layer_version): Creates a Lambda layer for shared dependencies.
 # 2. Lambda Layer Version for Utilities (aws_lambda_layer_version): Creates a Lambda layer for shared utilities.

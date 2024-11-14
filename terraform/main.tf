@@ -1,3 +1,4 @@
+# terraform/main.tf
 # This root Terraform configuration defines the following AWS resources and modules:
 # 1. AWS Provider (provider "aws"): Configures the AWS provider with the specified region and profile.
 # 2. API Gateway Module (module "apigateway"): Deploys an API Gateway with the specified settings and integrates with Cognito.

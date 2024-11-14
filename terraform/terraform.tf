@@ -1,3 +1,4 @@
+# terraform/terraform.tf
 # This Terraform configuration defines the required providers and Terraform version:
 # 1. AWS Provider (hashicorp/aws): Specifies the AWS provider with the required version.
 # 2. Archive Provider (hashicorp/archive): Specifies the Archive provider with the required version.

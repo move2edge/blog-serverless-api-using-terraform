@@ -1,3 +1,4 @@
+# terraform/modules/lambda-api/lambda-handler-delete-epic-failure.tf
 # This Terraform configuration defines the following AWS resources:
 # 1. Lambda Function for Deleting an Epic Failure (aws_lambda_function): Creates a Lambda function for deleting a failure record from DynamoDB.
 # 2. Data Source for Delete Epic Failure Lambda Code (data "archive_file"): Archives the delete-epic-failure Lambda function code into a zip file.

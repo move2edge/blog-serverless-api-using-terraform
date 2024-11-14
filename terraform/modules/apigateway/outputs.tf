@@ -1,3 +1,4 @@
+# terraform/modules/apigateway/outputs.tf
 # This Terraform configuration defines the following outputs of apigateway module:
 # 1. invoke_url: The URL to invoke the API Gateway stage.
 # 2. api_gateway_id: The ID of the created API Gateway.

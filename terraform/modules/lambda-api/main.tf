@@ -1,3 +1,4 @@
+# terraform/modules/lambda-api/main.tf
 # This Terraform configuration defines the following AWS resources:
 # 1. Local Variables (locals): Defines shared environment variables for the module.
 # 2. S3 Bucket (aws_s3_bucket): Creates an S3 bucket for storing Lambda functions.
