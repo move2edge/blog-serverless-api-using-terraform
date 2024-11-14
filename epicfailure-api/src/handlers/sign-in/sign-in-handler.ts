@@ -1,3 +1,4 @@
+// epicfailure-api/src/handlers/sign-in/sign-in-handler.ts
 // This file defines the AWS Lambda handler for user sign-in using Cognito.
 // It imports necessary services and libraries, validates the incoming request,
 // and uses CognitoService to authenticate the user with the provided email and password.

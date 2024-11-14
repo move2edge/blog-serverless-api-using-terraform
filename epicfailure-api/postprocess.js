@@ -1,3 +1,4 @@
+// epicfailure-api/postprocess.js
 // This script performs post-processing on transpiled JavaScript files in the 'dist' directory.
 // It replaces specific require statements with the correct paths for AWS Lambda layers.
 // The script processes all .js files in the specified directory and its subdirectories.
