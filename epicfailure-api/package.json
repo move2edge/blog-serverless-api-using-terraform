@@ -6,13 +6,13 @@
   "scripts": {
     "clean": "rm -rf dist",
     "build": "swc ./src -d ./dist --ignore \"**/*.test.ts,**/__test__/**\" && node postprocess.js && mkdir -p dist/layers/shared-layer/nodejs/node18 && cp -r dist/src/shared-layer/* dist/layers/shared-layer/nodejs/node18/",
-    "lint": "eslint --config eslint.config.mjs 'src/**/*.{json,js,jsx,ts,tsx}' --fix",
-    "prettier": "prettier \"src/**/*.{json,js,jsx,ts,tsx}\" --write",
     "package": "mkdir -p dist/layers/deps-layer/nodejs/node18 && cp package*.json dist/layers/deps-layer/nodejs/node18/ && cp yarn.lock dist/layers/deps-layer/nodejs/node18/ && cd dist/layers/deps-layer/nodejs/node18 && yarn --production --frozen-lockfile",
     "deploy": "terraform -chdir=./../terraform apply -auto-approve",
     "package-and-deploy": "yarn package && yarn deploy",
     "build-and-deploy": "yarn build && yarn deploy",
-    "package-build-and-deploy": "yarn package && yarn build && yarn deploy"
+    "package-build-and-deploy": "yarn package && yarn build && yarn deploy",
+    "lint": "eslint --config eslint.config.mjs 'src/**/*.{json,js,jsx,ts,tsx}' --fix",
+    "prettier": "prettier \"src/**/*.{json,js,jsx,ts,tsx}\" --write"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",

@@ -1,3 +1,10 @@
+# This Terraform configuration defines the following AWS resources:
+# 1. Lambda Function for Sign-In (aws_lambda_function): Creates a Lambda function for handling user sign-ins.
+# 2. Data Source for Sign-In Lambda Code (data "archive_file"): Archives the sign-in Lambda function code into a zip file.
+# 3. API Gateway Integration for Sign-In Lambda (aws_apigatewayv2_integration): Creates an integration between API Gateway and the sign-in Lambda function.
+# 4. API Gateway Route for Sign-In (aws_apigatewayv2_route): Creates a route in API Gateway for the sign-in endpoint.
+# 5. Lambda Permission for API Gateway (aws_lambda_permission): Grants API Gateway permission to invoke the sign-in Lambda function.
+
 resource "aws_lambda_function" "lambda_sign_in" {
   function_name = "${var.lambda_function_name_prefix}-sign-in"
   runtime       = "nodejs18.x"

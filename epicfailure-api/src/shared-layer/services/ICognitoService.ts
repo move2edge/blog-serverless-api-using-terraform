@@ -1,3 +1,5 @@
+// This file defines the ICognitoService interface, which specifies the methods for interacting with AWS Cognito.
+
 import { LoginData } from '@shared-layer/models';
 
 export interface ICognitoService {

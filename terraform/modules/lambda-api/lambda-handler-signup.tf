@@ -1,3 +1,10 @@
+# This Terraform configuration defines the following AWS resources:
+# 1. Lambda Function for Sign-Up (aws_lambda_function): Creates a Lambda function for handling user sign-ups.
+# 2. Data Source for Sign-Up Lambda Code (data "archive_file"): Archives the sign-up Lambda function code into a zip file.
+# 3. API Gateway Integration for Sign-Up Lambda (aws_apigatewayv2_integration): Creates an integration between API Gateway and the sign-up Lambda function.
+# 4. API Gateway Route for Sign-Up (aws_apigatewayv2_route): Creates a route in API Gateway for the sign-up endpoint.
+# 5. Lambda Permission for API Gateway (aws_lambda_permission): Grants API Gateway permission to invoke the sign-up Lambda function.
+
 resource "aws_lambda_function" "lambda_sign_up" {
   function_name = "${var.lambda_function_name_prefix}-sign-up"
   runtime       = "nodejs18.x"
@@ -47,4 +54,3 @@ resource "aws_lambda_permission" "api_gw_sign_up" {
 
   source_arn = "${var.api_gateway_execution_arn}/*/*"
 }
-

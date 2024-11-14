@@ -1,4 +1,7 @@
 
+// This file defines the AWS Lambda handler for retrieving all epic failure records from DynamoDB.
+// It imports necessary services and models, and uses DynamoDBService to fetch all records from DynamoDB.
+
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
 import { DynamoDBService } from '@shared-layer/services';
 import { EpicFailure } from '@shared-layer/models';

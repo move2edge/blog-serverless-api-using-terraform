@@ -1,3 +1,9 @@
+# This Terraform configuration defines the following AWS resources:
+# 1. API Gateway (aws_apigatewayv2_api): Creates an HTTP API Gateway with the specified name.
+# 2. API Gateway Stage (aws_apigatewayv2_stage): Creates a deployment stage for the API Gateway with auto-deploy enabled and access logging configured to CloudWatch.
+# 3. CloudWatch Log Group (aws_cloudwatch_log_group): Creates a CloudWatch Log Group for storing API Gateway access logs with a retention period of 14 days.
+# 4. API Gateway Authorizer (aws_apigatewayv2_authorizer): Configures a JWT authorizer using Amazon Cognito for securing the API Gateway endpoints.
+
 resource "aws_apigatewayv2_api" "api_gateway" {
   name          = var.api_gateway_name
   protocol_type = "HTTP"

@@ -1,3 +1,15 @@
+# This Terraform configuration defines the following AWS resources:
+# 1. Local Variables (locals): Defines shared environment variables for the module.
+# 2. S3 Bucket (aws_s3_bucket): Creates an S3 bucket for storing Lambda functions.
+# 3. S3 Bucket Public Access Block (aws_s3_bucket_public_access_block): Configures public access settings for the S3 bucket.
+# 4. Data Source for AWS Account Information (data "aws_caller_identity"): Retrieves information about the current AWS account.
+# 5. IAM Role for Lambda Execution (aws_iam_role): Creates an IAM role for Lambda execution with the necessary assume role policy.
+# 6. IAM Role Policy Attachment (aws_iam_role_policy_attachment): Attaches the AWSLambdaBasicExecutionRole policy to the IAM role.
+# 7. IAM Role Policy Attachment for DynamoDB (aws_iam_role_policy_attachment): Attaches a custom policy to the IAM role for Lambda to interact with DynamoDB.
+# 8. IAM Role for Lambda with Cognito Admin Permissions (aws_iam_role): Creates an IAM role for Lambda execution with additional permissions for Cognito operations.
+# 9. IAM Role Policy Attachment for Cognito Admin Role (aws_iam_role_policy_attachment): Attaches the AWSLambdaBasicExecutionRole policy to the Cognito admin IAM role.
+# 10. IAM Role Policy for Cognito Admin Role (aws_iam_role_policy): Defines a custom policy for the Cognito admin IAM role to allow specific Cognito operations.
+
 locals {
   shared_env_vars = {
     USER_POOL_ID         = var.user_pool_id
@@ -43,7 +55,6 @@ resource "aws_iam_role" "lambda_role_exec" {
 }
 POLICY
 }
-
 
 resource "aws_iam_role_policy_attachment" "lambda_policy" {
   role       = aws_iam_role.lambda_role_exec.name
@@ -132,5 +143,3 @@ resource "aws_iam_role_policy_attachment" "lambda_cognito_admin_dynamodb_policy_
   role       = aws_iam_role.lambda_cognito_admin_role.name
   policy_arn = aws_iam_policy.lambda_dynamodb_policy.arn
 }
-
-

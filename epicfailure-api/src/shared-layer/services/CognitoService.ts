@@ -1,3 +1,7 @@
+// This file defines the CognitoService class, which implements the ICognitoService interface.
+// The class provides methods for interacting with AWS Cognito, including user sign-up and sign-in.
+// It uses the AWS SDK for JavaScript to communicate with the Cognito Identity Provider.
+
 import { CognitoIdentityServiceProvider } from 'aws-sdk';
 
 import {
@@ -24,7 +28,6 @@ class CognitoService implements ICognitoService {
     this.clientId = process.env.COGNITO_CLIENT_ID!;
 
   }
-
 
   async signUp(email: string, password: string, name: string): Promise<void> {
     const params: CognitoIdentityServiceProvider.SignUpRequest = {

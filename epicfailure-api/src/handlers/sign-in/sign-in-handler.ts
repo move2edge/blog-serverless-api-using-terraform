@@ -1,3 +1,7 @@
+// This file defines the AWS Lambda handler for user sign-in using Cognito.
+// It imports necessary services and libraries, validates the incoming request,
+// and uses CognitoService to authenticate the user with the provided email and password.
+
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
 import { CognitoService } from '@shared-layer/services';
 import * as Joi from 'joi';
@@ -12,7 +16,6 @@ const signInSchema = Joi.object({
 const signInHandler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
   const { email, password } = JSON.parse(event.body || '{}');
 
-  // Validate the request body
   const { error } = signInSchema.validate({ email, password });
   if (error) {
     return {

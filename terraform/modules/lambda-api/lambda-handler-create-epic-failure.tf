@@ -1,3 +1,10 @@
+# This Terraform configuration defines the following AWS resources:
+# 1. Lambda Function for Creating an Epic Failure (aws_lambda_function): Creates a Lambda function for creating a failure record in DynamoDB.
+# 2. Data Source for Create Epic Failure Lambda Code (data "archive_file"): Archives the create-epic-failure Lambda function code into a zip file.
+# 3. API Gateway Integration for Create Epic Failure Lambda (aws_apigatewayv2_integration): Creates an integration between API Gateway and the create-epic-failure Lambda function.
+# 4. API Gateway Route for Create Epic Failure (aws_apigatewayv2_route): Creates a route in API Gateway for the create-epic-failure endpoint.
+# 5. Lambda Permission for API Gateway (aws_lambda_permission): Grants API Gateway permission to invoke the create-epic-failure Lambda function.
+
 resource "aws_lambda_function" "lambda_create_epic_failure" {
   function_name = "${var.lambda_function_name_prefix}-create-epic-failure"
   runtime       = "nodejs18.x"

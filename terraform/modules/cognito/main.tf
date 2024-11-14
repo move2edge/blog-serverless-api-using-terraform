@@ -1,3 +1,8 @@
+# This Terraform configuration defines the following AWS Cognito resources:
+# 1. Cognito User Pool (aws_cognito_user_pool): Creates a user pool with specified settings including account recovery, verification message template, auto-verified attributes, and password policy.
+# 2. Cognito User Pool Domain (aws_cognito_user_pool_domain): Creates a domain for the user pool.
+# 3. Cognito User Pool Client (aws_cognito_user_pool_client): Creates a user pool client with specified authentication flows and token validity settings.
+
 resource "aws_cognito_user_pool" "user_pool" {
   name = "${var.cognito_user_pool_name}"
   account_recovery_setting {
@@ -21,12 +26,10 @@ resource "aws_cognito_user_pool" "user_pool" {
   }
 }
 
-
 resource "aws_cognito_user_pool_domain" "user_pool_domain" {
   domain       = var.cognito_user_pool_domain
   user_pool_id = aws_cognito_user_pool.user_pool.id
 }
-
 
 resource "aws_cognito_user_pool_client" "user_pool_client" {
   name         = "${var.cognito_app_client_name}"  
@@ -46,7 +49,5 @@ resource "aws_cognito_user_pool_client" "user_pool_client" {
     access_token  = "minutes"
     id_token      = "minutes"
     refresh_token = "days"
-  }
-
-  
+  } 
 }

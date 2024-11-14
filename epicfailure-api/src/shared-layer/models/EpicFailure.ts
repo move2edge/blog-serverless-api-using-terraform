@@ -1,3 +1,5 @@
+// This file defines the EpicFailure class, which represents a record of an epic failure.
+
 export default class EpicFailure {
   failureID: string;
   taskAttempted: string;

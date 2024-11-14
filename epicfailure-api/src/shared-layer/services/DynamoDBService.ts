@@ -1,9 +1,11 @@
-import { DynamoDBClient, PutItemCommand, QueryCommand, UpdateItemCommand, DeleteItemCommand, ScanCommand } from '@aws-sdk/client-dynamodb';
+// This file defines the DynamoDBService class, which implements the IDynamoDBService interface.
+// The class provides methods for interacting with AWS DynamoDB, including adding, retrieving, and deleting epic failure records.
+// It uses the AWS SDK for JavaScript to communicate with DynamoDB and the AWS SDK utilities for marshalling and unmarshalling data.
+
+import { DynamoDBClient, PutItemCommand, DeleteItemCommand, ScanCommand } from '@aws-sdk/client-dynamodb';
 import { marshall, unmarshall } from '@aws-sdk/util-dynamodb';
 import { IDynamoDBService } from './IDynamoDBService';
 import { EpicFailure } from '@shared-layer/models';
-
-
 
 class DynamoDBService implements IDynamoDBService {
   private client: DynamoDBClient;

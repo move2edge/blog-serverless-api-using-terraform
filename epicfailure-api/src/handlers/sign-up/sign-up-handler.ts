@@ -1,3 +1,7 @@
+// This file defines the AWS Lambda handler for user sign-up using Cognito.
+// It imports necessary services and libraries, validates the incoming request,
+// and uses CognitoService to register the user with the provided email, password, and name.
+
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
 import { CognitoService } from '@shared-layer/services';
 import * as Joi from 'joi';

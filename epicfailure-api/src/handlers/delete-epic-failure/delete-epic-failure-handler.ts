@@ -1,3 +1,7 @@
+// This file defines the AWS Lambda handler for deleting an epic failure record from DynamoDB.
+// It imports necessary services, parses the incoming request to extract the failureID,
+// and uses DynamoDBService to delete the record from DynamoDB.
+
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
 import { DynamoDBService } from '@shared-layer/services';
 
