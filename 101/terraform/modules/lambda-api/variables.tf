@@ -7,8 +7,8 @@
 # 4. lambda_function_name_prefix: The prefix for the Lambda function names.
 
 variable "aws_region" {
-    description = "The AWS region to deploy resources"
-    type = string
+  description = "The AWS region to deploy resources"
+  type        = string
 }
 
 variable "api_gateway_id" {

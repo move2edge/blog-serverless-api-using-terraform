@@ -7,8 +7,8 @@
 # 4. lambda_function_name_prefix: The prefix for the Lambda function names.
 
 variable "aws_region" {
-    description = "The AWS region to deploy resources"
-    default     = "eu-central-1"
+  description = "The AWS region to deploy resources"
+  default     = "eu-central-1"
 }
 
 variable "api_gateway_name" {
@@ -22,7 +22,7 @@ variable "api_gateway_stage_name" {
 }
 
 variable "lambda_function_name_prefix" {
-  type = string
+  type    = string
   default = "epic-failures-api"
 }
 

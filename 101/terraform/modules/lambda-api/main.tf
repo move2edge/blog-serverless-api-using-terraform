@@ -11,7 +11,6 @@
 # Data source for AWS account information
 data "aws_caller_identity" "current" {}
 
-
 # S3 Bucket for Lambda functions
 resource "aws_s3_bucket" "lambda_bucket" {
   bucket        = "${var.lambda_function_name_prefix}-lambda-bucket"
@@ -19,7 +18,7 @@ resource "aws_s3_bucket" "lambda_bucket" {
 }
 
 resource "aws_s3_bucket_public_access_block" "lambda_bucket" {
-  bucket = aws_s3_bucket.lambda_bucket.id
+  bucket                  = aws_s3_bucket.lambda_bucket.id
   block_public_acls       = true
   block_public_policy     = true
   ignore_public_acls      = true
@@ -29,7 +28,7 @@ resource "aws_s3_bucket_public_access_block" "lambda_bucket" {
 # IAM Role for Lambda execution
 resource "aws_iam_role" "lambda_role_exec" {
   name = "exec-lambda"
-   assume_role_policy = jsonencode({
+  assume_role_policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
       {

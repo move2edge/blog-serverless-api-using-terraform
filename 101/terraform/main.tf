@@ -6,21 +6,21 @@
 # 3. Lambda API Module (module "lambda-api"): Deploys Lambda functions for API operations, integrates with API Gateway, Cognito, and DynamoDB.
 
 provider "aws" {
-  region = "eu-central-1"
+  region  = "eu-central-1"
   profile = "move2edge-dev"
 }
 
 module "apigateway" {
-  source = "./modules/apigateway"
-  aws_region = var.aws_region
-  api_gateway_name = var.api_gateway_name
+  source                 = "./modules/apigateway"
+  aws_region             = var.aws_region
+  api_gateway_name       = var.api_gateway_name
   api_gateway_stage_name = var.api_gateway_stage_name
 }
 
 module "lambda-api" {
-  source = "./modules/lambda-api"
-  aws_region = var.aws_region
-  api_gateway_id = module.apigateway.api_gateway_id
-  api_gateway_execution_arn = module.apigateway.api_gateway_execution_arn
+  source                      = "./modules/lambda-api"
+  aws_region                  = var.aws_region
+  api_gateway_id              = module.apigateway.api_gateway_id
+  api_gateway_execution_arn   = module.apigateway.api_gateway_execution_arn
   lambda_function_name_prefix = var.lambda_function_name_prefix
 }
