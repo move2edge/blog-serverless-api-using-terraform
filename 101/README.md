@@ -40,7 +40,6 @@ export INVOKE_URL="https://your-invoke-url-from-terraform-output"
 curl -X POST \
   ${INVOKE_URL}/epic-failures \
   -H "Content-Type: application/json" \
-  -H "Authorization: Bearer ${ID_TOKEN}" \
   -d '{
     "failureID": "001",
     "taskAttempted": "deploying a feature on Friday at 4:59 p.m.",
@@ -53,7 +52,6 @@ curl -X POST \
 curl -X POST \
   ${INVOKE_URL}/epic-failures \
   -H "Content-Type: application/json" \
-  -H "Authorization: Bearer ${ID_TOKEN}" \
   -d '{
     "failureID": "002",
     "taskAttempted": "refactoring the codebase without tests",
