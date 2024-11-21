@@ -1,7 +1,0 @@
-# Ignore all .zip files in the lambda directory and its subdirectories
-dist/
-node_modules/
-
-# .tfstate files
-*.tfstate
-*.tfstate.*
