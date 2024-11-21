@@ -8,6 +8,7 @@
     "build": "node build-handlers.js",
     "deploy": "terraform -chdir=./../terraform apply -auto-approve",
     "build-and-deploy": "yarn build && yarn deploy",
+    "destroy": "terraform -chdir=./../terraform destroy -auto-approve",
     "lint": "eslint --config eslint.config.mjs 'src/**/*.{json,js,jsx,ts,tsx}' --fix",
     "prettier": "prettier \"src/**/*.{json,js,jsx,ts,tsx}\" --write"
   },

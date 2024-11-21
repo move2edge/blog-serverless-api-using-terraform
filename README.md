@@ -66,7 +66,7 @@ export ID_TOKEN=$(curl -s -X POST \
 
 ```bash
 curl -X POST \
-  ${INVOKE_URL}/create-epic-failure \
+  ${INVOKE_URL}/epic-failures \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer ${ID_TOKEN}" \
   -d '{
@@ -79,7 +79,7 @@ curl -X POST \
 
 ```bash
 curl -X POST \
-  ${INVOKE_URL}/create-epic-failure \
+  ${INVOKE_URL}/epic-failures \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer ${ID_TOKEN}" \
   -d '{
@@ -94,7 +94,7 @@ curl -X POST \
 
 ```bash
 curl -X GET \
-  ${INVOKE_URL}/get-all-failures \
+  ${INVOKE_URL}/epic-failures \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer ${ID_TOKEN}"
 ```
@@ -103,7 +103,7 @@ curl -X GET \
 
 ```bash
 curl -X DELETE \
-  ${INVOKE_URL}/delete-epic-failure \
+  ${INVOKE_URL}/epic-failures \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer ${ID_TOKEN}" \
   -d '{

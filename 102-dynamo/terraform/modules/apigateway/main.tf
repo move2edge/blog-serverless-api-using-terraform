@@ -11,32 +11,25 @@ resource "aws_apigatewayv2_api" "api_gateway" {
 }
 
 resource "aws_apigatewayv2_stage" "stage" {
-  api_id = aws_apigatewayv2_api.api_gateway.id
-
+  api_id      = aws_apigatewayv2_api.api_gateway.id
   name        = var.api_gateway_stage_name
   auto_deploy = true
 
   access_log_settings {
     destination_arn = aws_cloudwatch_log_group.cloudwatch.arn
-
     format = jsonencode({
-      requestId               = "$context.requestId"
-      sourceIp                = "$context.identity.sourceIp"
-      requestTime             = "$context.requestTime"
-      protocol                = "$context.protocol"
-      httpMethod              = "$context.httpMethod"
-      resourcePath            = "$context.resourcePath"
-      routeKey                = "$context.routeKey"
-      status                  = "$context.status"
-      responseLength          = "$context.responseLength"
-      integrationErrorMessage = "$context.integrationErrorMessage"
-      }
-    )
+      requestId      = "$context.requestId"
+      sourceIp       = "$context.identity.sourceIp"
+      requestTime    = "$context.requestTime"
+      httpMethod     = "$context.httpMethod"
+      resourcePath   = "$context.resourcePath"
+      status         = "$context.status"
+      responseLength = "$context.responseLength"
+    })
   }
 }
 
 resource "aws_cloudwatch_log_group" "cloudwatch" {
-  name = "/aws/api-gw/${aws_apigatewayv2_api.api_gateway.name}"
-
+  name              = "/aws/api-gw/${aws_apigatewayv2_api.api_gateway.name}"
   retention_in_days = 14
 }

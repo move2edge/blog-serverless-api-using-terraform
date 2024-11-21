@@ -1,3 +1,7 @@
+// epicfailure-api/sbuild-handlers.js
+// This script uses esbuild to bundle each handler along with its dependencies into a single file.
+// It reads the handlers directory, filters out unnecessary files, and bundles each handler into the dist directory.
+
 const fs = require('fs');
 const path = require('path');
 const esbuild = require('esbuild');
@@ -15,7 +19,7 @@ fs.readdir(handlersDir, (err, files) => {
     process.exit(1);
   }
 
-  files = files.filter(file => file !== '.DS_Store'); // Ignore .DS_Store files
+  files = files.filter(file => file !== '.DS_Store'); // Ignore .DS_Store files (macOS)
 
   files.forEach(file => {
       const outfilename = file.replace('.ts', '.js');

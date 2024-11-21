@@ -7,8 +7,8 @@
 # 4. dynamo_table_name: The name of the DynamoDB table.
 
 variable "aws_region" {
-    description = "The AWS region to deploy resources"
-    default     = "eu-central-1"
+  description = "The AWS region to deploy resources"
+  default     = "eu-central-1"
 }
 
 variable "api_gateway_name" {
@@ -24,6 +24,5 @@ variable "api_gateway_stage_name" {
 variable "dynamo_table_name" {
   description = "The name of the DynamoDB table"
   default     = "epic-failures"
-  
-}
 
+}

@@ -3,9 +3,9 @@
 # 1. DynamoDB Table (aws_dynamodb_table): Creates a DynamoDB table with the specified name, billing mode, hash key, and tags.
 
 resource "aws_dynamodb_table" "epic_failures" {
-  name           = "${var.dynamo_table_name}"
-  billing_mode   = "PAY_PER_REQUEST"
-  hash_key       = "failureID"
+  name         = var.dynamo_table_name
+  billing_mode = "PAY_PER_REQUEST"
+  hash_key     = "failureID"
 
   attribute {
     name = "failureID"
@@ -15,4 +15,4 @@ resource "aws_dynamodb_table" "epic_failures" {
   tags = {
     Name = "${var.dynamo_table_name}"
   }
-}
+} 

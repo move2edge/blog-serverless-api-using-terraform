@@ -4,8 +4,9 @@
 // It validates the request body against a schema and creates an epic failure object.
 
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
-import EpicFailure, { IEpicFailure } from '../models/EpicFailure';
 import * as Joi from 'joi';
+
+import EpicFailure, { IEpicFailure } from '../models/EpicFailure';
 
 const epicFailureSchema = Joi.object<IEpicFailure>({
   failureID: Joi.string().required(),

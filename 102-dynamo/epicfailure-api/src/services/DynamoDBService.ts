@@ -11,7 +11,6 @@ import type { IEpicFailure } from '../models/EpicFailure';
 
 class DynamoDBService implements IDynamoDBService {
   private client: DynamoDBClient;
-  private static readonly NULL_PLACEHOLDER = 'NULL';
 
   constructor() {
     this.client = new DynamoDBClient({ region: process.env.AWS_REGION });
