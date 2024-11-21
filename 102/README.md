@@ -61,3 +61,22 @@ curl -X POST \
     "lessonsLearned": ["always write tests before refactoring", "never assume the code will work without testing"]
   }'
 ```
+
+### GET Epic Failures
+
+```bash
+curl -X GET \
+  ${INVOKE_URL}/epic-failures \
+  -H "Content-Type: application/json"
+```
+
+### DELETE Epic Failure
+
+```bash
+curl -X DELETE \
+  ${INVOKE_URL}/epic-failures \
+  -H "Content-Type: application/json" \
+  -d '{
+    "failureID": "001"
+  }'
+```

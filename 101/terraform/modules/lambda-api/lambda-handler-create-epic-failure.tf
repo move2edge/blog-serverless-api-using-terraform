@@ -31,7 +31,7 @@ resource "aws_apigatewayv2_integration" "lambda_create_epic_failure" {
 
 resource "aws_apigatewayv2_route" "post_create_epic_failure" {
   api_id    = var.api_gateway_id
-  route_key = "POST /create-epic-failure"
+  route_key = "POST /epic-failures"
   target    = "integrations/${aws_apigatewayv2_integration.lambda_create_epic_failure.id}"
 }
 
