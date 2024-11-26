@@ -24,5 +24,4 @@ variable "api_gateway_stage_name" {
 variable "dynamo_table_name" {
   description = "The name of the DynamoDB table"
   default     = "epic-failures"
-
 }
