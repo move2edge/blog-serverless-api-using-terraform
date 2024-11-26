@@ -1,4 +1,4 @@
-// epicfailure-api/src/services/IDynamoDBService.ts
+// epicfailure-api/src/shared-layer/services/IDynamoDBService.ts
 // This file defines the IDynamoDBService interface, which specifies the methods for interacting with AWS DynamoDB.
 
 import type { IEpicFailure } from "src/models/EpicFailure";
