@@ -28,9 +28,10 @@
 
 ## Test API
 
-Use environment variables to set the `invoke_url` output from the terraform apply command.
+Use environment variables to set your `email`, and `invoke_url` output from the terraform apply command.
 
 ```bash
+export EMAIL="your-email@example.com"
 export INVOKE_URL="https://your-invoke-url-from-terraform-output"
 ```
 
@@ -40,6 +41,7 @@ export INVOKE_URL="https://your-invoke-url-from-terraform-output"
 curl -X POST \
   ${INVOKE_URL}/epic-failures \
   -H "Content-Type: application/json" \
+  -H "Authorization: Bearer ${ID_TOKEN}" \
   -d '{
     "failureID": "001",
     "taskAttempted": "deploying a feature on Friday at 4:59 p.m.",
@@ -52,6 +54,7 @@ curl -X POST \
 curl -X POST \
   ${INVOKE_URL}/epic-failures \
   -H "Content-Type: application/json" \
+  -H "Authorization: Bearer ${ID_TOKEN}" \
   -d '{
     "failureID": "002",
     "taskAttempted": "refactoring the codebase without tests",
@@ -65,6 +68,7 @@ curl -X POST \
 ```bash
 curl -X GET \
   ${INVOKE_URL}/epic-failures \
+  -H "Authorization: Bearer ${ID_TOKEN}" \
   -H "Content-Type: application/json"
 ```
 
@@ -73,6 +77,7 @@ curl -X GET \
 ```bash
 curl -X DELETE \
   ${INVOKE_URL}/epic-failures \
+  -H "Authorization: Bearer ${ID_TOKEN}" \
   -H "Content-Type: application/json" \
   -d '{
     "failureID": "001"
