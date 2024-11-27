@@ -35,6 +35,33 @@ export EMAIL="your-email@example.com"
 export INVOKE_URL="https://your-invoke-url-from-terraform-output"
 ```
 
+### Sign up
+
+```bash
+curl -X POST \
+  ${INVOKE_URL}/sign-up \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "'"${EMAIL}"'",   
+    "password": "Password123!",
+    "name": "Test User"
+  }'
+```
+
+Now you need to open your inbox and accept the invitation to sign up.
+
+### Sign in and export idToken
+
+```bash
+export ID_TOKEN=$(curl -s -X POST \
+  ${INVOKE_URL}/sign-in \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "'"${EMAIL}"'",
+    "password": "Password123!" 
+  }' | jq -r '.idToken')                 
+```
+
 ### Create Epic Failures
 
 ```bash
