@@ -8,7 +8,8 @@
 # 5. Cognito Module (module "cognito"): Creates a Cognito User Pool, User Pool Client, and User Pool Domain with the specified settings.
 
 provider "aws" {
-  region = "eu-central-1"
+  region  = "eu-central-1"
+  profile = "move2edge-dev"
 }
 
 module "apigateway" {
