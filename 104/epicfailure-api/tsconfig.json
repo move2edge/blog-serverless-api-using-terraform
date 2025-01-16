@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@services/*": ["src/shared-layer/services/*"],
+      "@models/*": ["src/shared-layer/models/*"]
+    }
+  }
+}
